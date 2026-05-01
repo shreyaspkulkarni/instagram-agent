@@ -1,6 +1,8 @@
 import { CaptionResult, ScoreResult } from "./types";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+// In production: requests go to /api/backend/* → Next.js rewrites to EC2 (server-side, avoids mixed content)
+// In development: requests go directly to localhost:8000
+const API_URL = process.env.NODE_ENV === "production" ? "/api/backend" : (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000");
 
 export async function uploadAndScore(file: File): Promise<string> {
   const formData = new FormData();
