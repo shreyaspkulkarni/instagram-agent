@@ -1,0 +1,26 @@
+# Environment
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+uv.lock
+*.egg-info/
+
+# Node
+frontend/node_modules/
+frontend/.next/
+
+# Photos (originals stay on your machine)
+photos/
+
+# Scraped data (regenerate with data/scrape_instagram.py)
+data/*.json
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
