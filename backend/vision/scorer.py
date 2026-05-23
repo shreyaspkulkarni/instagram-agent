@@ -4,9 +4,13 @@ import io
 from google import genai
 from google.genai import types
 from PIL import Image
+from pillow_heif import register_heif_opener
 
 from backend.config import settings
 from backend.vision.schemas import PhotoScore
+
+# Register HEIF/HEIC support so Pillow can open iPhone photos (.heic).
+register_heif_opener()
 
 MAX_DIMENSION = 1024
 
